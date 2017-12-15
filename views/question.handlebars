@@ -1,0 +1,30 @@
+<h1>{{question}}</h1>
+
+<div>
+  Trues: {{trues}}
+</div>
+
+<div>
+  Falses: {{falses}}
+</div>
+
+</br>
+
+<div>
+  <h3>Answer the Question</h3>
+  <form action="/questions?address={{contractAddress}}" method="post">
+    {{#eq currentAnswerInt 0}}
+      <input type="radio" name="answer" value="true">True<br>
+      <input type="radio" name="answer" value="false">False<br>
+    {{/eq}}
+    {{#eq currentAnswerInt 1}}
+      <input type="radio" name="answer" checked value="true">True<br>
+      <input type="radio" name="answer" value="false">False<br>
+    {{/eq}}
+    {{#eq currentAnswerInt 2}}
+      <input type="radio" name="answer" value="true">True<br>
+      <input type="radio" name="answer" checked value="false">False<br>
+    {{/eq}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
